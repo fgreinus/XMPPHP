@@ -364,7 +364,6 @@ class XMPPHP_XMLStream {
     $this->reconnect = false;
     $this->send($this->stream_end);
     $this->sent_disconnect = true;
-    $this->processUntil('end_stream', 5);
     $this->disconnected = true;
   }
 
