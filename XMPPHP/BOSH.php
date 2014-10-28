@@ -91,6 +91,8 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
     $header = array('Accept-Encoding: gzip, deflate', 'Content-Type: text/xml; charset=utf-8');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     curl_setopt($ch, CURLOPT_VERBOSE, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     $output = '';
     if ($recv) {
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
