@@ -312,7 +312,8 @@ class XMPPHP_XMLStream {
       try {
         $contextOptions = stream_context_create(array(
             "ssl" => array(
-                "verify_peer" => false
+                "verify_peer" => false,
+                "verify_peer_name" => false
             )
         ));
         $this->socket = @stream_socket_client("$conntype://{$this->host}:{$this->port}", $errno, $errstr, $timeout, $conflag, $contextOptions);
